@@ -1,0 +1,144 @@
+{% extends 'Main.html' %}
+
+{% block content %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="container">
+<br>  <p class="text-center">More bootstrap 4 components on <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>
+<hr>
+
+
+
+
+
+<div class="card bg-light">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Create Account</h4>
+	<p class="text-center">Get started with your free account</p>
+	<p>
+		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+		<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+	</p>
+	<p class="divider-text">
+        <span class="bg-light">OR</span>
+    </p>
+	<form method="post" action="" autocomplete="off">
+        {% csrf_token %}
+	<div class="form-group input-group">
+		<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		 </div>
+        {{ form.username}}
+    </div> <!-- form-group// -->
+
+                    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            {{ form.last_name }}
+		</div>
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+            {{ form.email}}
+
+{#        <input name="" class="form-control" placeholder="Email address" type="email">#}
+    </div> <!-- form-group// -->
+
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <div>
+    {{ form.password1}}
+            </div>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+    {{ form.password2}}
+    </div> <!-- form-group// -->
+
+
+
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" > Create Account  </button>
+        {{ form.errors }}
+    </div> <!-- form-group// -->
+    <p class="text-center">Have an account? <a href="{% url 'log_in' %}">Log In</a> </p>
+
+</form>
+</article>
+</div> <!-- card.// -->
+
+</div>
+<!--container end.//-->
+
+<br><br>
+<article class="bg-secondary mb-3">
+<div class="card-body text-center">
+    <h3 class="text-white mt-3">Bootstrap 4 UI KIT</h3>
+<p class="h5 text-white">Components and templates  <br> for Ecommerce, marketplace, booking websites
+and product landing pages</p>   <br>
+<p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com
+ <i class="fa fa-window-restore "></i></a></p>
+</div>
+<br><br>
+</article>
+
+
+{#{% block content %}#}
+
+{##}
+{#    <form action="" method="POST">#}
+{#    {{ form.username.label}}#}
+{#    {{ form.label_suffix}}#}
+{#    {{ form.username}}#}
+{##}
+{#    {{ form.email.label}}#}
+{#    {{ form.label_suffix}}#}
+{#    {{ form.email}}#}
+{##}
+{##}
+{#    {{ form.password1.label}}#}
+{#    {{ form.label_suffix}}#}
+{#    {{ form.password1}}#}
+{##}
+{##}
+{#    {{ form.password2.label}}#}
+{#    {{ form.label_suffix}}#}
+{#    {{ form.password2}}#}
+{#    </form>#}
+{#{% endblock %}#}
+<script>
+
+{#    that returns an array of the whole tags hold input name in the tree !#}
+    let all_fields = document.getElementsByTagName('input');
+    all_fields[1].placeholder = 'User Name.. ';
+    all_fields[1].setAttribute('name', 'username');
+    all_fields[2].placeholder = 'Last Name';
+
+    all_fields[3].placeholder = 'E-mail.. ';
+    all_fields[3].setAttribute('name', 'email');
+
+    all_fields[4].placeholder = 'Password.. ';
+    all_fields[5].placeholder = 'Confirm Password.. ';
+
+    {#all_fields[3].setAttribute('autocomplete', 'new-password');#}
+    {#all_fields[4].setAttribute('autocomplete', 'new-password');#}
+
+
+{#for (let i = 0; i <all_fields.length ; i++) {#}
+{#    all_fields[i].setAttribute('autocomplete', 'off');#}
+{##}
+
+</script>
+{% endblock %}

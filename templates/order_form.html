@@ -1,0 +1,36 @@
+{% extends 'Main.html' %}
+
+{% block content %}
+
+
+{#    leaving the action blank will allow#}
+{#    us dynamically direct our customer users#}
+{#    to the page that we want so this button#}
+{#    will be under my control#}
+<br>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card card-body">
+
+                    <form action="" method="post">
+                    {% csrf_token %}
+                {#        this is gonna be the instance of #}
+                {#        the ModelForm in shape of #}
+                {#        form widget type not DB#}
+                {#        since it has to types#}
+
+
+
+                        {{ form.management_form }}
+                        {% for order in form %}
+                        {{ order }}
+                            <hr/>
+                        {% endfor %}
+                    <input type="submit" name="submit">
+                    </form>
+            </div>
+     </div>
+
+
+</div>
+{% endblock %}

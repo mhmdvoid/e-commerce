@@ -1,0 +1,16 @@
+{% extends 'Main.html' %}
+
+{% block content %}
+
+
+    	<div class="col">
+		<div class="col-md">
+			  	<div class="card-header">
+
+                    <p>You, {{ current_user }} logged out successfully ! Thanks</p>
+
+                    <a class="btn btn-info btn-md" href="{% url 'log_in' %}">Log in Back</a>
+			  	</div>
+			</div>
+		</div>
+{% endblock %}

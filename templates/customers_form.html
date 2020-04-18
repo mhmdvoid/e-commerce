@@ -1,0 +1,10 @@
+{% extends 'Main.html' %}
+
+{%  block content %}
+{#    post= write , new instance, new row, override an existing row, a specific row to update or delete #}
+<form action="" method="post">
+{% csrf_token %}
+{{ form }}
+<input type="submit" name="submit">
+</form>
+{% endblock %}
